@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Clinic - Insumos Médicos y Equipamiento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --secondary-blue: #004494;
+            --light-blue: #f0f5fa;
+            --white: #FFFFFF;
+            --dark-text: #333333;
+            --gray-text: #555555;
+            --border-color: #dee2e6;
+            --transition: all 0.3s ease;
+            --whatsapp-green: #25D366;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; color: var(--dark-text); background-color: var(--white); line-height: 1.7; }
+        h1, h2, h3, .navbar-brand { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navbar */
+        header { background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .navbar-brand { font-size: 1.6rem; color: var(--primary-blue); display: flex; align-items: center; gap: 12px; }
+        .navbar-brand img { height: 50px; }
+        .nav-menu { display: flex; gap: 40px; list-style: none; }
+        .nav-link { font-weight: 500; color: var(--dark-text); font-size: 1.05rem; padding-bottom: 5px; border-bottom: 2px solid transparent; }
+        .nav-link:hover, .nav-link.active { color: var(--primary-blue); border-bottom-color: var(--primary-blue); }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(to right, rgba(0, 86, 179, 0.9), rgba(0, 68, 148, 0.85)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; color: var(--white); padding: 120px 0; text-align: center; }
+        .hero h1 { font-size: 3.2rem; margin-bottom: 20px; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
+        .hero p { font-size: 1.25rem; margin-bottom: 30px; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .btn { display: inline-block; padding: 14px 35px; border-radius: 50px; font-weight: 700; transition: var(--transition); border: 2px solid transparent; }
+        .btn-primary { background: var(--white); color: var(--primary-blue); }
+        .btn-primary:hover { background: transparent; color: var(--white); border-color: var(--white); }
+
+        /* Sobre Nosotros */
+        .about { padding: 80px 0; background-color: var(--white); }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 15px; }
+        .section-title .underline { width: 80px; height: 4px; background: var(--primary-blue); margin: 0 auto; border-radius: 2px; }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-text p { margin-bottom: 20px; color: var(--gray-text); font-size: 1.1rem; }
+        .about-img img { width: 100%; border-radius: 15px; box-shadow: 0 15px 40px rgba(0, 86, 179, 0.15); }
+
+        /* Contact & Map */
+        .contact { padding: 80px 0; background-color: var(--light-blue); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
+        .contact-info h3 { color: var(--primary-blue); margin-bottom: 30px; font-size: 2rem; }
+        .contact-item { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; font-size: 1.1rem; }
+        .contact-item i { color: var(--primary-blue); font-size: 1.5rem; width: 30px; text-align: center; }
+        .map-container { border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 86, 179, 0.1); height: 400px; }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
+
+        /* Footer */
+        footer { background-color: #002d5c; color: var(--white); padding: 40px 0; text-align: center; }
+        .whatsapp-float { position: fixed; bottom: 40px; right: 40px; background-color: var(--whatsapp-green); color: var(--white); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; }
+
+        @media (max-width: 768px) {
+            .about-content, .contact-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+
+        /* ===== SECCIÓN CATEGORÍAS ===== */
+
+.categories {
+    padding: 80px 0;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background-color: var(--light-bg);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid var(--primary-red);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.category-card i {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.category-card h3 {
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.category-card p {
+    color: var(--gray-text);
+    font-size: 0.95rem;
+}
+
+/* ===== MÉTRICAS SOBRE NOSOTROS ===== */
+.about-metrics {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.metric {
+    text-align: left;
+    min-width: 120px;
+}
+
+.metric span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: block;
+    line-height: 1;
+}
+
+.metric p {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: var(--gray-text);
+}
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="navbar-brand">
+                    <img src="logo_artclinic.png" alt="Art Clinic Logo">
+                    <span>Art Clinic</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link">Productos</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Soluciones Médicas Profesionales</h1>
+            <p>Equipamiento, insumos y productos de traumatología para el cuidado de la salud en Los Ángeles, Chile.</p>
+            <a href="productos.html" class="btn btn-primary">Explorar Productos</a>
+        </div>
+    </section>
+
+        <section id="categorias" class="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestras Categorías</h2>
+                <p>Explora nuestra amplia gama de suministros especializados</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Diagnóstico</h3>
+                    <p>Equipos de precisión para evaluaciones clínicas exactas.</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-hands-wash"></i>
+                    <h3>Bioseguridad</h3>
+                    <p>Protección garantizada para el personal y pacientes.</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-wheelchair"></i>
+                    <h3>Movilidad</h3>
+                    <p>Soluciones ortopédicas y ayudas técnicas de alta calidad.</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-kit-medical"></i>
+                    <h3>Emergencias</h3>
+                    <p>Insumos críticos para atención inmediata y rescate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Nosotros</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>En <strong>Art Clinic</strong>, nos dedicamos a la distribución de insumos médicos, equipamiento y productos de traumatología de la más alta calidad. Nuestra misión es facilitar el acceso a suministros médicos esenciales para profesionales de la salud y pacientes, garantizando productos certificados y un servicio personalizado.</p>
+                    <p>Con años de experiencia en el sector, nos hemos consolidado como un referente de confianza en la región, destacando por nuestra rapidez en la entrega y atención experta. Estamos comprometidos con el bienestar de la comunidad, ofreciendo soluciones confiables y efectivas.</p>
+                    <div class="about-metrics">
+    <div class="metric">
+        <span>10+</span>
+        <p>Años de experiencia</p>
+    </div>
+    <div class="metric">
+        <span>1K+</span>
+        <p>Clientes atendidos</p>
+    </div>
+    <div class="metric">
+        <span>1K+</span>
+        <p>Productos disponibles</p>
+    </div>
+</div>
+
+                </div>
+
+                <div class="about-img">
+                    <img src="009.png" alt="Equipo Art Clinic">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contáctanos</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Villagrán 120, Los Ángeles, Chile</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+56 9 1234 5678</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contacto@artclinic.cl</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Lunes a Viernes: 09:00 - 18:30</span>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.543445846123!2d-72.3551!3d-37.4697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9669b5d7a8b8b8b7%3A0x8b8b8b8b8b8b8b8b!2sVillagr%C3%A1n%20120%2C%20Los%20%C3%81ngeles%2C%20B%C3%ADo%20B%C3%ADo%2C%20Chile!5e0!3m2!1ses!2scl!4v1642690000000!5m2!1ses!2scl" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Art Clinic - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/56912345678" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>

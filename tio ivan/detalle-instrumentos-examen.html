@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrumentos de Examen Físico - Art Clinic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-red: #B84C4C; --primary-blue: #4A6FA5; --light-bg: #F8F9FA; --white: #FFFFFF; --dark-text: #333333; --gray-text: #666666; --border-color: #E0E0E0; --transition: all 0.3s ease; --whatsapp-green: #25D366; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; color: var(--dark-text); background-color: var(--white); }
+        h1, h2, h3, .navbar-brand { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .navbar-brand { font-size: 1.5rem; color: var(--primary-blue); display: flex; align-items: center; gap: 12px; }
+        .navbar-brand img { height: 50px; }
+        .nav-menu { display: flex; gap: 30px; }
+        .breadcrumb { background-color: var(--light-bg); padding: 20px 0; margin-bottom: 40px; }
+        .breadcrumb-list { display: flex; gap: 10px; color: var(--gray-text); }
+        .breadcrumb-list a { color: var(--primary-blue); }
+        .product-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .product-image { background: #f0f0f0; border-radius: 15px; height: 450px; display: flex; align-items: center; justify-content: center; font-size: 8rem; color: rgba(74, 111, 165, 0.1); }
+        .product-info h1 { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 20px; }
+        .product-description { color: var(--gray-text); margin-bottom: 30px; line-height: 1.8; }
+        .variants-section { background: var(--light-bg); padding: 30px; border-radius: 10px; }
+        .variants-section h3 { color: var(--primary-blue); margin-bottom: 20px; }
+        .variants-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; }
+        .variants-table th { background: var(--primary-blue); color: white; padding: 15px; text-align: left; }
+        .variants-table td { padding: 15px; border-bottom: 1px solid var(--border-color); }
+        .btn-wsp-small { background: var(--whatsapp-green); color: white; padding: 8px 15px; border-radius: 5px; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
+        footer { background-color: #2c3e50; color: var(--white); padding: 40px 0; text-align: center; }
+        .whatsapp-float { position: fixed; bottom: 40px; right: 40px; background-color: var(--whatsapp-green); color: var(--white); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="navbar-brand"><img src="logo_artclinic.png" alt="Art Clinic Logo"><span>Art Clinic</span></a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link">Productos</a></li>
+                    <li><a href="categoria-equipamiento.html" class="nav-link active">Equipamiento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-list">
+                <a href="index.html">Inicio</a> <span>/</span> <a href="categoria-equipamiento.html">Equipamiento Médico</a> <span>/</span> <span>Instrumentos de Examen Físico</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-image"><i class="fas fa-stethoscope"></i></div>
+            <div class="product-info">
+                <h1>Instrumentos de Examen Físico</h1>
+                <p class="product-description">Instrumentos especializados de marcas reconocidas para examen físico clínico, incluyendo otoscopios, oftalmoscopios y fonendoscopios de calidad profesional.</p>
+                <div class="variants-section">
+                    <h3>Modelos Disponibles</h3>
+                    <table class="variants-table">
+                        <thead><tr><th>Producto</th><th>Acción</th></tr></thead>
+                        <tbody>
+                            <tr><td>Otoscopios Welch Allyn – Riester</td><td><a href="https://wa.me/56912345678?text=Consulta:%20Otoscopios" class="btn-wsp-small"><i class="fab fa-whatsapp"></i> Consultar</a></td></tr>
+                            <tr><td>Oftalmoscopios Welch Allyn</td><td><a href="https://wa.me/56912345678?text=Consulta:%20Oftalmoscopios" class="btn-wsp-small"><i class="fab fa-whatsapp"></i> Consultar</a></td></tr>
+                            <tr><td>Fonendoscopios Littmann, Riester, ADC</td><td><a href="https://wa.me/56912345678?text=Consulta:%20Fonendoscopios" class="btn-wsp-small"><i class="fab fa-whatsapp"></i> Consultar</a></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer><div class="container"><p>&copy; 2026 Art Clinic - Todos los derechos reservados.</p></div></footer>
+    <a href="https://wa.me/56912345678" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</body>
+</html>
